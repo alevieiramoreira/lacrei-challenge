@@ -1,11 +1,12 @@
 import * as S from './styles';
 
-interface ButtonProps {
+export interface ButtonProps {
   action: () => void;
   text: string;
+  active?: boolean;
 }
 
-const Button = ({ action, text }: ButtonProps) => {
+const Button = ({ action, text, active }: ButtonProps) => {
   const handleButtonKeyPress = (
     event: React.KeyboardEvent<HTMLButtonElement>
   ) => {
@@ -20,6 +21,7 @@ const Button = ({ action, text }: ButtonProps) => {
       id={text}
       aria-label={text}
       onKeyUp={handleButtonKeyPress}
+      active={active}
     >
       {text}
     </S.ButtonContainer>

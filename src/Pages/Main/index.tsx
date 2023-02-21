@@ -20,6 +20,7 @@ const MainPage = () => {
             action={() => {
               navigate('/user');
             }}
+            active
             text="Pessoa Usuária"
           />
           <Button

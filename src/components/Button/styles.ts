@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { ButtonProps } from '.';
 
-export const ButtonContainer = styled.button`
+type StyleProps = Pick<ButtonProps, 'active'>;
+
+export const ButtonContainer = styled.button<StyleProps>`
   padding: 1rem;
   background-color: #fff;
   border: 2px solid #018762;
@@ -15,8 +18,11 @@ export const ButtonContainer = styled.button`
   &:hover {
     opacity: 0.7;
   }
-  &:active {
-    background-color: #018762;
-    color: #fff;
-  }
+
+  ${({ active }) =>
+    active &&
+    css`
+      background-color: #018762;
+      color: #fff;
+    `}
 `;
