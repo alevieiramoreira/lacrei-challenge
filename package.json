@@ -37,7 +37,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run test:noWatch"
+      "pre-push": "yarn run test"
     }
   },
   "eslintConfig": {
