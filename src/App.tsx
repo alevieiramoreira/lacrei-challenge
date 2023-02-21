@@ -1,8 +1,11 @@
+import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 import MainPage from 'Pages/Main';
 import GlobalStyle from 'styles/global';
-import { Helmet } from 'react-helmet';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import ProfessionalPage from 'Pages/Professional';
 
 function App() {
   return (
@@ -23,9 +26,30 @@ function App() {
         />
       </Helmet>
       <GlobalStyle />
-      <Header currentPage="main" />
-      <MainPage />
-      <Footer currentPage="main" />
+      <Header currentPage="professional" />
+
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            index
+            element={
+              <>
+                <MainPage />
+              </>
+            }
+          />
+          <Route
+            path="/professional"
+            element={
+              <>
+                <ProfessionalPage />
+              </>
+            }
+          />
+        </Routes>
+      </Router>
+      <Footer currentPage="professional" />
     </>
   );
 }
