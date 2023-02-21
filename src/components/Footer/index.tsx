@@ -49,7 +49,7 @@ const Footer = ({ currentPage }: HeaderProps) => {
               <Link
                 type="link"
                 text={page.text}
-                href={`/${page.key}`}
+                href={page.key === 'main' ? `/` : `/${page.key}`}
                 key={page.key}
                 aria-current={currentPage === page.key ? 'page' : undefined}
               />

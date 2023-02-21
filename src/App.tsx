@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import MainPage from 'Pages/Main';
 import GlobalStyle from 'styles/global';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import ProfessionalPage from 'Pages/Professional';
+import UserPage from 'Pages/User';
 
 function App() {
   return (
@@ -44,6 +45,14 @@ function App() {
             element={
               <>
                 <ProfessionalPage />
+              </>
+            }
+          />
+          <Route
+            path="/user"
+            element={
+              <>
+                <UserPage />
               </>
             }
           />

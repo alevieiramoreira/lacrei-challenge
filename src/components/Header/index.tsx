@@ -31,7 +31,7 @@ const Header = ({ currentPage }: HeaderProps) => {
               <Link
                 type="link"
                 text={page.text}
-                href="/"
+                href={page.key === 'main' ? `/` : `/${page.key}`}
                 key={page.key}
                 aria-current={currentPage === page.key ? 'page' : undefined}
               />
