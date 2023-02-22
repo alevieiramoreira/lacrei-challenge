@@ -29,6 +29,7 @@ const Link = ({ type, text, imgProps, action, active }: LinkProps) => {
           tabIndex={0}
           role="link"
           active={active}
+          onClick={action}
         >
           <Logo
             altText={imgProps.altText}
