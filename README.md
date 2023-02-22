@@ -8,7 +8,7 @@
 
 > Este repositório tem como objetivo atender o desafio front-end da Lacrei Saúde, uma plataforma digital, segura e inclusiva em atendimento clínico para a comunidade LGBTQIAPN+.
 
-### 🏠 [Homepage](https://github.com/alevieiramoreira/lacrei-challenge)
+### 🏠 [Homepage on Netlify](https://lacrei-challenge.netlify.app/)
 
 ## Instalação
 
