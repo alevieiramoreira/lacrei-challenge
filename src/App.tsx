@@ -14,8 +14,7 @@ function App() {
     <>
       <Helmet>
         <title>Home | Desafio Lacrei</title>
-        <link rel="shortcut icon" href="/img/icon-512.png" />
-        <link rel="apple-touch-icon" href="/img/icon-512.png" />
+        <link rel="icon" href="/favicon.jpeg" />
         <meta
           name="description"
           content="Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+"
