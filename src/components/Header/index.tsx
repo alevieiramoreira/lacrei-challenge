@@ -1,25 +1,14 @@
+import { useContext } from 'react';
+
 import Link from 'components/Link';
+import { PageContext } from 'contexts/PageContext';
 import * as S from './styles';
+import { useNavigate } from 'react-router-dom';
+import { pagesContent } from 'data/pages';
 
-interface HeaderProps {
-  currentPage: 'main' | 'user' | 'professional';
-}
-
-const Header = ({ currentPage }: HeaderProps) => {
-  const pagesContent = [
-    {
-      key: 'main',
-      text: 'Home'
-    },
-    {
-      key: 'user',
-      text: 'Pessoa Usuária'
-    },
-    {
-      key: 'professional',
-      text: 'Profissional'
-    }
-  ];
+const Header = () => {
+  const navigate = useNavigate();
+  const { currentPage, setActivePage } = useContext(PageContext);
 
   return (
     <S.Container>
@@ -30,10 +19,14 @@ const Header = ({ currentPage }: HeaderProps) => {
             <S.ListItem key={page.key}>
               <Link
                 type="link"
-                text={page.text}
-                href={page.key === 'main' ? `/` : `/${page.key}`}
+                text={page.title}
                 key={page.key}
                 aria-current={currentPage === page.key ? 'page' : undefined}
+                action={() => {
+                  navigate(page.key === 'main' ? `/` : `/${page.key}`);
+                  setActivePage(page.key);
+                }}
+                active={page.key === currentPage}
               />
             </S.ListItem>
           ))}

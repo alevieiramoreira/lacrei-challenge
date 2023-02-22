@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { LinkProps } from '.';
 
-export const LinkContainer = styled.a`
+type StyleProps = Pick<LinkProps, 'active'>;
+
+export const LinkContainer = styled.button<StyleProps>`
   color: #1f1f1f;
   font-size: 1.6rem;
   font-weight: 500;
@@ -8,10 +11,12 @@ export const LinkContainer = styled.a`
 
   &:hover,
   &:focus {
-    opacity: 0.5;
     transition: 0.3s;
   }
-  &:active {
-    font-weight: 800;
-  }
+  ${({ active }) =>
+    active &&
+    css`
+      color: #018762;
+      font-weight: 800;
+    `}
 `;

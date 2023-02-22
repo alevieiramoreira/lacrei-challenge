@@ -2,11 +2,12 @@ import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import MainPage from 'Pages/Main';
-import GlobalStyle from 'styles/global';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 import ProfessionalPage from 'Pages/Professional';
 import UserPage from 'Pages/User';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import GlobalStyle from 'styles/global';
+import PageContextProvider from 'contexts/PageContext';
 
 function App() {
   return (
@@ -27,38 +28,39 @@ function App() {
         />
       </Helmet>
       <GlobalStyle />
-      <Header currentPage="professional" />
-
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            index
-            element={
-              <>
-                <MainPage />
-              </>
-            }
-          />
-          <Route
-            path="/professional"
-            element={
-              <>
-                <ProfessionalPage />
-              </>
-            }
-          />
-          <Route
-            path="/user"
-            element={
-              <>
-                <UserPage />
-              </>
-            }
-          />
-        </Routes>
-      </Router>
-      <Footer currentPage="professional" />
+      <PageContextProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              index
+              element={
+                <>
+                  <MainPage />
+                </>
+              }
+            />
+            <Route
+              path="/professional"
+              element={
+                <>
+                  <ProfessionalPage />
+                </>
+              }
+            />
+            <Route
+              path="/user"
+              element={
+                <>
+                  <UserPage />
+                </>
+              }
+            />
+          </Routes>
+          <Footer />
+        </Router>
+      </PageContextProvider>
     </>
   );
 }

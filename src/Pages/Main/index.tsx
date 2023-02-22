@@ -1,11 +1,15 @@
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { PageContext } from 'contexts/PageContext';
 import Button from 'components/Button';
 import Logo from 'components/Logo';
 import Text from 'components/Text';
-import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const { setActivePage } = useContext(PageContext);
 
   return (
     <S.Wrapper>
@@ -19,6 +23,7 @@ const MainPage = () => {
           <Button
             action={() => {
               navigate('/user');
+              setActivePage('user');
             }}
             active
             text="Pessoa Usuária"
@@ -26,6 +31,7 @@ const MainPage = () => {
           <Button
             action={() => {
               navigate('/professional');
+              setActivePage('professional');
             }}
             text="Profissional"
           />

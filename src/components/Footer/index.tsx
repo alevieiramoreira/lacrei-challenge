@@ -1,25 +1,16 @@
+import { useContext } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
+import { PageContext } from 'contexts/PageContext';
+import { pagesContent } from 'data/pages';
 import Link from 'components/Link';
 import Text from 'components/Text';
 import * as S from './styles';
-interface HeaderProps {
-  currentPage: 'main' | 'user' | 'professional';
-}
 
-const Footer = ({ currentPage }: HeaderProps) => {
-  const pagesContent = [
-    {
-      key: 'main',
-      text: 'Home'
-    },
-    {
-      key: 'user',
-      text: 'Pessoa Usuária'
-    },
-    {
-      key: 'professional',
-      text: 'Profissional'
-    }
-  ];
+const Footer = () => {
+  const navigate = useNavigate();
+  const { currentPage, setActivePage } = useContext(PageContext);
 
   const socialMedia = [
     {
@@ -48,9 +39,13 @@ const Footer = ({ currentPage }: HeaderProps) => {
             <S.ListItem key={page.key}>
               <Link
                 type="link"
-                text={page.text}
-                href={page.key === 'main' ? `/` : `/${page.key}`}
+                text={page.title}
+                action={() => {
+                  navigate(page.key === 'main' ? `/` : `/${page.key}`);
+                  setActivePage(page.key);
+                }}
                 key={page.key}
+                active={page.key === currentPage}
                 aria-current={currentPage === page.key ? 'page' : undefined}
               />
             </S.ListItem>
@@ -63,11 +58,14 @@ const Footer = ({ currentPage }: HeaderProps) => {
             <S.ListItem key={media.name}>
               <Link
                 type="image"
-                href={media.href}
                 imgProps={{
                   altText: `Logo ${media.name}`,
                   size: 3.2,
                   url: `${media.logoUrl}`
+                }}
+                key={media.name}
+                action={() => {
+                  window.open(media.href);
                 }}
               />
             </S.ListItem>
