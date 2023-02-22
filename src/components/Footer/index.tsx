@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 import { PageContext } from 'contexts/PageContext';
 import { pagesContent } from 'data/pages';
+import { socialMedia } from 'data/media';
 import Link from 'components/Link';
 import Text from 'components/Text';
 import * as S from './styles';
@@ -11,24 +11,6 @@ import * as S from './styles';
 const Footer = () => {
   const navigate = useNavigate();
   const { currentPage, setActivePage } = useContext(PageContext);
-
-  const socialMedia = [
-    {
-      name: 'instagram',
-      href: 'https://www.instagram.com/lacrei.saude/',
-      logoUrl: '/instagram-logo.png'
-    },
-    {
-      name: 'facebook',
-      href: 'https://www.facebook.com/lacrei.saude/',
-      logoUrl: '/facebook-logo.png'
-    },
-    {
-      name: 'linkedin',
-      href: 'https://www.linkedin.com/company/lacrei/',
-      logoUrl: '/linkedin-logo.png'
-    }
-  ];
 
   return (
     <S.FooterContainer>
