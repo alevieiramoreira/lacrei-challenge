@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
   width: 100%;
   padding: 0 6.4rem;
+  position: fixed;
+  bottom: 4rem;
 `;
 
 export const LinkNav = styled.nav`

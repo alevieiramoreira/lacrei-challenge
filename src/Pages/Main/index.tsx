@@ -38,7 +38,7 @@ const MainPage = () => {
         </S.ButtonContainer>
       </S.IntroContainer>
       <div>
-        <Logo altText="a" url="logo-1.png" size={55} />
+        <Logo altText="a" url="logo-1.png" size={54} />
       </div>
     </S.Wrapper>
   );
