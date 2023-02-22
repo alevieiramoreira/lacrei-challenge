@@ -1,10 +1,18 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const FooterContainer = styled.footer`
   width: 100%;
   padding: 0 6.4rem;
   position: fixed;
   bottom: 4rem;
+
+  ${media.lessThan('large')`
+    flex-direction: column;
+    position: relative;
+    padding-top: 2rem;
+    bottom: 0;
+  `}
 `;
 
 export const LinkNav = styled.nav`

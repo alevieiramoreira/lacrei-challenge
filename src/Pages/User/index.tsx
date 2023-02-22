@@ -14,9 +14,9 @@ const UserPage = () => {
           />
         </S.LeftDivider>
       </S.IntroContainer>
-      <div>
-        <Logo altText="a" url="logo-2.png" size={54} />
-      </div>
+      <S.ImgContainer>
+        <Logo altText="a" url="logo-2.png" size={100} />
+      </S.ImgContainer>
     </S.Wrapper>
   );
 };

@@ -5,5 +5,6 @@ interface LogoImgProps {
 }
 
 export const LogoImg = styled.img<LogoImgProps>`
-  width: ${(props) => props.size}rem;
+  width: max(${(props) => props.size}%);
+  position: relative;
 `;

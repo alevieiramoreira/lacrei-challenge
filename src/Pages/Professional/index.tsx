@@ -14,9 +14,9 @@ const ProfessionalPage = () => {
           />
         </S.LeftDivider>
       </S.IntroContainer>
-      <div>
-        <Logo altText="a" url="logo-3.png" size={52} />
-      </div>
+      <S.ImgContainer>
+        <Logo altText="a" url="logo-3.png" size={100} />
+      </S.ImgContainer>
     </S.Wrapper>
   );
 };

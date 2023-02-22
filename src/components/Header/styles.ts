@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Container = styled.header`
   background-color: #eee;
@@ -7,6 +8,9 @@ export const Container = styled.header`
   padding: 0.8rem 6.4rem;
   justify-content: space-between;
   align-items: center;
+  ${media.lessThan('medium')`
+    flex-direction: column;
+  `}
 `;
 
 export const Title = styled.a`

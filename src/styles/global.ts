@@ -9,8 +9,9 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
   }
-  html, body, #__next {
+  html, body, #root {
     height: 100%;
+    width: 100%
   }
   body {
     font-family: 'Nunito', sans-serif;

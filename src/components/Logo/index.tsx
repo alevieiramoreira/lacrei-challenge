@@ -7,7 +7,15 @@ export interface LogoProps {
 }
 
 const Logo = ({ url, altText, size }: LogoProps) => {
-  return <S.LogoImg src={url} alt={altText} size={size} role="presentation" />;
+  return (
+    <S.LogoImg
+      src={url}
+      alt={altText}
+      size={size}
+      role="presentation"
+      loading="lazy"
+    />
+  );
 };
 
 export default Logo;

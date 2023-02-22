@@ -42,7 +42,7 @@ const Footer = () => {
                 type="image"
                 imgProps={{
                   altText: `Logo ${media.name}`,
-                  size: 3.2,
+                  size: 100,
                   url: `${media.logoUrl}`
                 }}
                 key={media.name}
